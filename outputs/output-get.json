@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/outputs/output-get",
+    "title": "JSON schema for Output on EarthCache™",
+    "description": "<describe an output>",
+    "type": "object",
+    "required": [
+        "id",
+        "name",
+        "provider"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "a8fc3dde-a3e8-11e7-9793-ae4260ee3b4b"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "True Color Image"
+            ]
+        },
+        "description": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "Tiled version of True Color Image Algorithm"
+            ]
+        },
+        "private": {
+            "type": "boolean"
+        },
+        "cover_image": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "url"
+            ],
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "examples": [
+                        "https://s3-us-west-2.amazonaws.com/skywatch-public-imagery/outputs/True_Color_Image.jpg"
+                    ]
+                },
+                "alt_text": {
+                    "type": "string",
+                    "examples": [
+                        "SkyWatch Space Applications"
+                    ]
+                }
+            }
+        },
+        "provider": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                        "SkyWatch"
+                    ]
+                },
+                "logo_url": {
+                    "type": "string"
+                }
+            }
+        },
+        "pricing": {
+            "type": "object",
+            "required": [
+                "scheme"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "scheme": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                        "km2"
+                    ]
+                }
+            }
+        }
+    }
+}
