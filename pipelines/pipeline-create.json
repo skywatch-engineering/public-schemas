@@ -1,0 +1,153 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-create.json",
+    "title": "JSON schema for pipeline... on EarthCache™",
+    "description": "<describe a pipeline>",
+    "type": "object",
+    "required": [
+        "start_date",
+        "interval",
+        "output"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "Berkeley"
+            ]
+        },
+        "start_date": {
+            "description": "<describe start_date>",
+            "type": "string",
+            "format": "date",
+            "examples": [
+                "2018-06-01"
+            ]
+        },
+        "end_date": {
+            "$comment": "App must set default based on start_date",
+            "description": "<describe end_date>",
+            "type": "string",
+            "format": "date",
+            "examples": [
+                "2018-06-31"
+            ]
+        },
+        "budget_per_km2": {
+            "type": "number",
+            "minimum": 0,
+            "default": 0
+        },
+        "resolution_low": {
+            "description": "<describe resolution_range>",
+            "type": "number",
+            "minimum": 0.4,
+            "maximum": 30,
+            "default": 30
+        },
+        "resolution_high": {
+            "$comment": "Application must validate resolution_low > resolution_high",
+            "description": "<describe resolution_high>",
+            "type": "number",
+            "minimum": 0.4,
+            "maximum": 30,
+            "default": 10
+        },
+        "cloud_cover_percentage": {
+            "description": "<describe cloud_cover_percentage>",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 100
+        },
+        "interval": {
+            "type": "string",
+            "pattern": "[1-9]\\d{0,2}d"
+        },
+        "interval_slack": {
+            "type": "string",
+            "pattern": "\\d{1,3}d",
+            "default": "3d"
+        },
+        "priorities": {
+            "type": "array",
+            "description": "<describe priorities>",
+            "items": {
+                "enum": [
+                    "recent",
+                    "cloudcover",
+                    "resolution",
+                    "cost",
+                    "first",
+                    "middle"
+                ]
+            },
+            "uniqueItems": true,
+            "minLength": 6,
+            "maxLength": 6,
+            "default": [
+                "recent",
+                "cloudcover",
+                "resolution",
+                "cost",
+                "first",
+                "middle"
+            ]
+        },
+        "aoi": {
+            "$ref": "supported-geojson.json"
+        },
+        "output": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "format": {
+                    "enum": [
+                        "geotiff",
+                        "png"
+                    ],
+                    "default": "geotiff"
+                }
+            }
+        },
+        "tags": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "required": [
+                        "label",
+                        "value"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "label": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "value": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    }
+                }
+            ]
+        },
+        "status": {
+            "$comment": "status.default = inactive if not aoi else active; throws an error if status = active and not aoi",
+            "enum": [
+                "active",
+                "inactive"
+            ]
+        }
+    }
+}
