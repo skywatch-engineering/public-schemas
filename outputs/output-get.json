@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/outputs/output-get",
+    "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/outputs/output-get.json",
     "title": "JSON schema for Output on EarthCache™",
     "description": "<describe an output>",
     "type": "object",
