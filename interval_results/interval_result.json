@@ -87,7 +87,100 @@
                         "format": "date-time"
                     },
                     "metadata": {
-                        "type": "object"
+                        "type": "object",
+                        "properties": {
+                            "processing_applied": {
+                                "type": "object",
+                                "properties": {
+                                    "atmospheric_correction_toa": {
+                                        "type": "boolean"
+                                    },
+                                    "pansharpening": {
+                                        "type": "boolean"
+                                    },
+                                    "cloud_masking": {
+                                        "type": "boolean"
+                                    },
+                                    "haze_masking": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "bands": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "minimum": 1
+                                        },
+                                        "no_data_value": {
+                                            "type": "number"
+                                        },
+                                        "data_type": {
+                                            "type": "string"
+                                        },
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "spectral_wavelength": {
+                                            "type": "number"
+                                        },
+                                        "raster_width": {
+                                            "type": "number"
+                                        },
+                                        "raster_height": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "resolution_x": {
+                                "type": "number"
+                            },
+                            "resolution_y": {
+                                "type": "number"
+                            },
+                            "map_crs": {
+                                "type": "string"
+                            },
+                            "sensor_mode": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "valid_pixel_percentage": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 100
+                            },
+                            "cloud_cover_percentage": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 100
+                            },
+                            "name": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "size_in_mb": {
+                                "type": "number",
+                                "minimum": 0
+                            },
+                            "corner_coordinates": {
+                                "type": "array",
+                                "items": {
+                                    "type": "array",
+                                    "minLength": 2,
+                                    "maxLength": 2,
+                                    "items": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
                     },
                     "created_at": {
                         "type": "string",
