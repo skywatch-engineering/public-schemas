@@ -68,16 +68,13 @@
                 "type": "object",
                 "properties": {
                     "preview_url": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "visual_url": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "analytics": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "capture_time": {
                         "type": "string",
@@ -110,7 +107,6 @@
                                     "properties": {
                                         "name": {
                                             "type": "string",
-                                            "minimum": 1
                                         },
                                         "no_data_value": {
                                             "type": "number"
@@ -122,22 +118,22 @@
                                             "type": "string"
                                         },
                                         "spectral_wavelength": {
-                                            "type": "number"
+                                            "type": ["number", "null"]
                                         },
                                         "raster_width": {
-                                            "type": "number"
+                                            "type": ["number", "null"]
                                         },
                                         "raster_height": {
-                                            "type": "number"
+                                            "type": ["number", "null"]
                                         }
                                     }
                                 }
                             },
                             "resolution_x": {
-                                "type": "number"
+                                "type": ["number", "null"]
                             },
                             "resolution_y": {
-                                "type": "number"
+                                "type": ["number", "null"]
                             },
                             "map_crs": {
                                 "type": "string"
@@ -149,21 +145,20 @@
                                 "type": "string"
                             },
                             "valid_pixel_percentage": {
-                                "type": "number",
+                                "type": ["number", "null"],
                                 "minimum": 0,
                                 "maximum": 100
                             },
                             "cloud_cover_percentage": {
-                                "type": "number",
+                                "type": ["number", "null"],
                                 "minimum": 0,
                                 "maximum": 100
                             },
                             "name": {
-                                "type": "string",
-                                "minLength": 1
+                                "type": "string"
                             },
                             "size_in_mb": {
-                                "type": "number",
+                                "type": ["number", "null"],
                                 "minimum": 0
                             },
                             "corner_coordinates": {
