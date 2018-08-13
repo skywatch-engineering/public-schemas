@@ -106,7 +106,7 @@
                                     "type": "object",
                                     "properties": {
                                         "name": {
-                                            "type": "string",
+                                            "type": "string"
                                         },
                                         "no_data_value": {
                                             "type": "number"
