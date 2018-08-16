@@ -1,8 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/interval_results/interval_result.json",
-    "title": "JSON schema for Interval Result on EarthCache™",
-    "description": "<describe an interval result>",
     "type": "object",
     "required": [
         "id",
@@ -17,33 +15,25 @@
     "properties": {
         "id": {
             "type": "string",
-            "minLength": 1,
-            "examples": [
-                "62d161f0-00ea-41b9-8e12-cecb95d21bba"
-            ]
+            "minLength": 1
         },
         "output_id": {
             "type": "string",
-            "minLength": 1,
-            "examples": [
-                "a8fc3dde-a3e8-11e7-9793-ae4260ee3b4b"
-            ]
+            "minLength": 1
         },
         "pipeline_id": {
             "type": "string",
             "minLength": 1
         },
         "status": {
+            "type": "string",
             "enum": [
                 "complete",
                 "processing"
             ]
         },
         "message": {
-            "type": "string",
-            "examples": [
-                "Processing complete. 1 result available"
-            ]
+            "type": "string"
         },
         "interval": {
             "type": "object",
@@ -68,13 +58,16 @@
                 "type": "object",
                 "properties": {
                     "preview_url": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "uri"
                     },
                     "visual_url": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "uri"
                     },
-                    "analytics": {
-                        "type": "string"
+                    "analytics_url": {
+                        "type": "string",
+                        "format": "uri"
                     },
                     "capture_time": {
                         "type": "string",
@@ -165,8 +158,8 @@
                                 "type": "array",
                                 "items": {
                                     "type": "array",
-                                    "minLength": 2,
-                                    "maxLength": 2,
+                                    "minItems": 2,
+                                    "maxItems": 2,
                                     "items": {
                                         "type": "number"
                                     }
