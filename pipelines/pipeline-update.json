@@ -1,43 +1,36 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-update.json",
-    "title": "JSON schema for pipeline... on EarthCache™",
-    "description": "<describe a pipeline>",
     "type": "object",
     "additionalProperties": false,
     "properties": {
         "name": {
             "type": "string",
-            "minLength": 1,
-            "examples": [
-                "Berkeley"
-            ]
+            "minLength": 1
         },
         "aoi": {
             "$ref": "supported-geojson.json"
         },
         "tags": {
             "type": "array",
-            "items": [
-                {
-                    "type": "object",
-                    "required": [
-                        "label",
-                        "value"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                        "label": {
-                            "type": "string",
-                            "minLength": 1
-                        },
-                        "value": {
-                            "type": "string",
-                            "minLength": 1
-                        }
+            "items": {
+                "type": "object",
+                "required": [
+                    "label",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "type": "string",
+                        "minLength": 1
                     }
                 }
-            ]
+            }
         },
         "status": {
             "$comment": "status.default = inactive if not aoi else active; throws an error if status = active and not aoi",

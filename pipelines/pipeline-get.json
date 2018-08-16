@@ -1,8 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-get.json",
-    "title": "JSON schema for pipeline... on EarthCache™",
-    "description": "<describe a pipeline>",
     "type": "object",
     "required": [
         "id",
@@ -31,12 +29,10 @@
             "minLength": 1
         },
         "start_date": {
-            "description": "<describe start_date>",
             "type": "string",
             "format": "date"
         },
         "end_date": {
-            "description": "<describe end_date>",
             "type": "string",
             "format": "date"
         },
@@ -45,19 +41,16 @@
             "minimum": 0
         },
         "resolution_low": {
-            "description": "<describe resolution_range>",
             "type": "number",
             "minimum": 0.4,
             "maximum": 30
         },
         "resolution_high": {
-            "description": "<describe resolution_high>",
             "type": "number",
             "minimum": 0.4,
             "maximum": 30
         },
         "cloud_cover_percentage": {
-            "description": "<describe cloud_cover_percentage>",
             "type": "number",
             "minimum": 0,
             "maximum": 100
@@ -72,8 +65,8 @@
         },
         "priorities": {
             "type": "array",
-            "description": "<describe priorities>",
             "items": {
+                "type": "string",
                 "enum": [
                     "recent",
                     "cloudcover",
@@ -84,8 +77,8 @@
                 ]
             },
             "uniqueItems": true,
-            "minLength": 6,
-            "maxLength": 6
+            "minItems": 6,
+            "maxItems": 6
         },
         "aoi": {
             "$ref": "supported-geojson.json"
@@ -107,6 +100,7 @@
                     "minLength": 1
                 },
                 "format": {
+                    "type": "string",
                     "enum": [
                         "geotiff",
                         "png"
@@ -116,24 +110,27 @@
         },
         "tags": {
             "type": "array",
-            "items": [
-                {
-                    "type": "object",
-                    "required": [
-                        "label",
-                        "value"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                        "label": {
-                            "type": "string",
-                            "minLength": 1
-                        }
+            "items": {
+                "type": "object",
+                "required": [
+                    "label",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "type": "string",
+                        "minLength": 1
                     }
                 }
-            ]
+            }
         },
         "status": {
+            "type": "string",
             "enum": [
                 "active",
                 "inactive",
