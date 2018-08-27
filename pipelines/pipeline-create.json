@@ -98,7 +98,7 @@
                     "type": "string",
                     "enum": [
                         "geotiff",
-                        "png"
+                        "jp2"
                     ],
                     "default": "geotiff"
                 }

@@ -103,7 +103,7 @@
                     "type": "string",
                     "enum": [
                         "geotiff",
-                        "png"
+                        "jp2"
                     ]
                 }
             }
