@@ -81,11 +81,25 @@
             "maxItems": 6
         },
         "aoi": {
-            "$ref": "supported-geojson.json"
+            "anyOf": [
+                {
+                    "$ref": "supported-geojson.json"
+                },
+                {
+                    "type": "null"
+                }
+            ]
         },
         "area_km2": {
-            "type": "number",
-            "exclusiveMinimum": 0
+            "anyOf": [
+                {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                },
+                {
+                    "type": "null"
+                }
+            ]
         },
         "output": {
             "type": "object",
