@@ -38,7 +38,15 @@
                     "format": "uri"
                 },
                 "alt_text": {
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
                 }
             }
         },
@@ -54,8 +62,15 @@
                     "minLength": 1
                 },
                 "logo_url": {
-                    "type": "string",
-                    "format": "uri"
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
                 }
             }
         },
