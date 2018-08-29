@@ -29,7 +29,8 @@
             "type": "string",
             "enum": [
                 "complete",
-                "processing"
+                "processing",
+                "pending"
             ]
         },
         "message": {
