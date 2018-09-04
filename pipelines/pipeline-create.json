@@ -81,7 +81,7 @@
             ]
         },
         "aoi": {
-            "$ref": "supported-geojson.json"
+            "$ref": "supported-geojson-geometry.json"
         },
         "output": {
             "type": "object",

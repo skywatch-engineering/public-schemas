@@ -1,9 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/supported-geojson.json",
-    "title": "GeoJSON Object supported by EarthCache™",
+    "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/supported-geojson-geometry.json",
+    "title": "GeoJSON Geometry supported by EarthCache™",
     "type": "object",
-    "description": "This object represents a geometry, feature, or collection of features.",
     "additionalProperties": false,
     "required": [
         "type", "coordinates"

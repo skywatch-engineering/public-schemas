@@ -9,7 +9,7 @@
             "minLength": 1
         },
         "aoi": {
-            "$ref": "supported-geojson.json"
+            "$ref": "supported-geojson-geometry.json"
         },
         "tags": {
             "type": "array",
