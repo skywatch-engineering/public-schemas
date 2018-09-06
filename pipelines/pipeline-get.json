@@ -74,10 +74,7 @@
                                 "type": "string",
                                 "enum": [
                                     "lowest_cost",
-                                    "highest_cost",
                                     "highest_resolution",
-                                    "lowest_resolution",
-                                    "highest_cloud_cover",
                                     "lowest_cloud_cover",
                                     "most_recent",
                                     "interval_median",
@@ -85,7 +82,7 @@
                                 ]
                             },
                             "uniqueItems": true,
-                            "minItems": 0
+                            "minItems": 1
                         }
                     }
                 },

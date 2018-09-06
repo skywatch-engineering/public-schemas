@@ -68,7 +68,7 @@
                                 "enum": [
                                     "lowest_cost",
                                     "highest_resolution",
-                                    "highest_cloud_cover",
+                                    "lowest_cloud_cover",
                                     "most_recent",
                                     "interval_median",
                                     "least_recent"
@@ -78,7 +78,7 @@
                             "minItems": 0,
                             "default": [
                                 "most_recent",
-                                "highest_cloud_cover",
+                                "lowest_cloud_cover",
                                 "highest_resolution",
                                 "lowest_cost"
                             ]
