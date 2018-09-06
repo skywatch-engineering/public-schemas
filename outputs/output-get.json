@@ -73,19 +73,6 @@
                     ]
                 }
             }
-        },
-        "pricing": {
-            "type": "object",
-            "required": [
-                "scheme"
-            ],
-            "additionalProperties": false,
-            "properties": {
-                "scheme": {
-                    "type": "string",
-                    "minLength": 1
-                }
-            }
         }
     }
 }
