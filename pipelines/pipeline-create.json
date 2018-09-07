@@ -50,17 +50,17 @@
             "type": "string",
             "pattern": "[1-9]\\d{0,2}d"
         },
-        "delivery": {
+        "result_delivery": {
             "oneOf": [
                 {
                     "type": "object",
                     "properties": {
-                        "wait_interval": {
+                        "max_latency": {
                             "type": "string",
                             "pattern": "\\d{1,3}d",
                             "default": "3d"
                         },
-                        "interval_results_priorities": {
+                        "priorities": {
                             "type": "array",
                             "$comment": "make sure to check in app side for conflicting enums",
                             "items": {
@@ -69,15 +69,15 @@
                                     "lowest_cost",
                                     "highest_resolution",
                                     "lowest_cloud_cover",
-                                    "most_recent",
-                                    "interval_median",
-                                    "least_recent"
+                                    "earliest",
+                                    "midpoint",
+                                    "latest"
                                 ]
                             },
                             "uniqueItems": true,
                             "minItems": 0,
                             "default": [
-                                "most_recent",
+                                "latest",
                                 "lowest_cloud_cover",
                                 "highest_resolution",
                                 "lowest_cost"

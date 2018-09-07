@@ -30,7 +30,8 @@
             "enum": [
                 "complete",
                 "processing",
-                "pending"
+                "pending",
+                "failed"
             ]
         },
         "message": {
@@ -83,7 +84,7 @@
                                     "atmospheric_correction_toa": {
                                         "type": "boolean"
                                     },
-                                    "pansharpening": {
+                                    "pan_sharpening": {
                                         "type": "boolean"
                                     },
                                     "cloud_masking": {
