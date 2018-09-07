@@ -11,7 +11,7 @@
         "resolution_high",
         "cloud_cover_percentage",
         "interval",
-        "delivery",
+        "result_delivery",
         "output",
         "status",
         "created_at",
