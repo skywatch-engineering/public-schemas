@@ -75,7 +75,6 @@
                                 ]
                             },
                             "uniqueItems": true,
-                            "minItems": 0,
                             "default": [
                                 "latest",
                                 "lowest_cloud_cover",
