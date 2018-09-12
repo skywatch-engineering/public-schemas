@@ -29,14 +29,14 @@
         },
         "resolution_low": {
             "type": "number",
-            "minimum": 0.4,
+            "minimum": 0.3,
             "maximum": 30,
             "default": 30
         },
         "resolution_high": {
             "$comment": "Application must validate resolution_low > resolution_high",
             "type": "number",
-            "minimum": 0.4,
+            "minimum": 0.3,
             "maximum": 30,
             "default": 10
         },
