@@ -184,15 +184,9 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "message",
                     "configuration"
                 ],
                 "properties": {
-                    "message": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 512
-                    },
                     "configuration": {
                         "type": "object",
                         "properties": {
