@@ -179,14 +179,28 @@
                 }
             }
         },
-        "_____s": {
+        "alternate_search_results": {
             "type": "array",
             "items": {
                 "type": "object",
-                "required": [
-                    "configuration"
-                ],
                 "properties": {
+                    "details": {
+                        "type": "object",
+                        "properties": {
+                            "price_per_km2": {
+                                "type": "number",
+                                "minimum": 0
+                            },
+                            "resolution": {
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                            },
+                            "capture_date": {
+                                "type": "string",
+                                "format": "date"
+                            }
+                        }
+                    },
                     "configuration": {
                         "type": "object",
                         "properties": {
