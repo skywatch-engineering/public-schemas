@@ -112,22 +112,22 @@
                                             "type": "string"
                                         },
                                         "spectral_wavelength": {
-                                            "type": ["number", "null"]
+                                            "type": "number"
                                         },
                                         "raster_width": {
-                                            "type": ["number", "null"]
+                                            "type": "number"
                                         },
                                         "raster_height": {
-                                            "type": ["number", "null"]
+                                            "type": "number"
                                         }
                                     }
                                 }
                             },
                             "resolution_x": {
-                                "type": ["number", "null"]
+                                "type": "number"
                             },
                             "resolution_y": {
-                                "type": ["number", "null"]
+                                "type": "number"
                             },
                             "map_crs": {
                                 "type": "string"
@@ -139,12 +139,12 @@
                                 "type": "string"
                             },
                             "valid_pixel_percentage": {
-                                "type": ["number", "null"],
+                                "type": "number",
                                 "minimum": 0,
                                 "maximum": 100
                             },
                             "cloud_cover_percentage": {
-                                "type": ["number", "null"],
+                                "type": "number",
                                 "minimum": 0,
                                 "maximum": 100
                             },
@@ -152,7 +152,7 @@
                                 "type": "string"
                             },
                             "size_in_mb": {
-                                "type": ["number", "null"],
+                                "type": "number",
                                 "minimum": 0
                             },
                             "corner_coordinates": {
@@ -175,6 +175,34 @@
                     "updated_at": {
                         "type": "string",
                         "format": "date-time"
+                    }
+                }
+            }
+        },
+        "_____s": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "configuration"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "configuration": {
+                        "type": "object",
+                        "required": [
+                            "hits"
+                        ],
+                        "properties": {
+                            "hits": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0
+                            }
+                        }
                     }
                 }
             }

@@ -95,25 +95,11 @@
             ]
         },
         "aoi": {
-            "anyOf": [
-                {
-                    "$ref": "supported-geojson-geometry.json"
-                },
-                {
-                    "type": "null"
-                }
-            ]
+            "$ref": "supported-geojson-geometry.json"
         },
         "area_km2": {
-            "anyOf": [
-                {
-                    "type": "number",
-                    "exclusiveMinimum": 0
-                },
-                {
-                    "type": "null"
-                }
-            ]
+            "type": "number",
+            "exclusiveMinimum": 0
         },
         "output": {
             "type": "object",
