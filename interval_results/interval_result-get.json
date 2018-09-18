@@ -11,6 +11,7 @@
         "created_at",
         "updated_at"
     ],
+    "additionalProperties": false,
     "properties": {
         "id": {
             "type": "string",
@@ -183,6 +184,10 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "required": [
+                    "configuration"
+                ],
+                "additionalProperties": false,
                 "properties": {
                     "details": {
                         "type": "object",
@@ -212,7 +217,8 @@
                         }
                     }
                 }
-            }
+            },
+            "additionalItems": false
         },
         "created_at": {
             "type": "string",
