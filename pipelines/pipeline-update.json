@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-update.json",
     "type": "object",
+    "title": "Pipeline",
     "additionalProperties": false,
     "properties": {
         "name": {
@@ -15,6 +16,7 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "title": "Tag",
                 "required": [
                     "label",
                     "value"

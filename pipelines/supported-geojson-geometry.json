@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/supported-geojson-geometry.json",
-    "title": "GeoJSON Geometry supported by EarthCache™",
+    "title": "Geometry",
+    "description": "GeoJSON Geometry supported by EarthCache™",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -9,7 +10,6 @@
     ],
     "properties": {
         "type": {
-            "title": "Type",
             "type": "string",
             "description": "The type of GeoJSON object.",
             "enum": [
@@ -17,7 +17,6 @@
             ]
         },
         "coordinates": {
-            "title": "Coordinates",
             "type": "array",
             "minItems": 1,
             "items": {

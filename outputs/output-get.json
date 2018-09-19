@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/outputs/output-get.json",
-    "title": "JSON schema for Output on EarthCache™",
+    "title": "Output",
+    "description": "JSON schema for Output on EarthCache™",
     "type": "object",
     "required": [
         "id",
@@ -27,6 +28,7 @@
         },
         "cover_image": {
             "type": "object",
+            "title": "CoverImage",
             "additionalProperties": false,
             "required": [
                 "url"
@@ -45,6 +47,7 @@
         },
         "provider": {
             "type": "object",
+            "title": "Provider",
             "required": [
                 "name"
             ],

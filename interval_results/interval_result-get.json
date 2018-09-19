@@ -2,6 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/interval_results/interval_result.json",
     "type": "object",
+    "title": "IntervalResult",
+    "description": "Result information regarding a specific interval.",
     "required": [
         "id",
         "output_id",
@@ -58,6 +60,7 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "title": "Result",
                 "properties": {
                     "preview_url": {
                         "type": "string",

@@ -2,6 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-create.json",
     "type": "object",
+    "title": "Pipeline",
+    "description": "JSON schema for Pipeline on EarthCache™",
     "required": [
         "start_date",
         "interval",
@@ -51,12 +53,16 @@
             "pattern": "[1-9]\\d{0,2}d"
         },
         "result_delivery": {
+            "title": "ResultDelivery",
+            "description": "Configuration that determines which search result to process and deliver.",
             "oneOf": [
                 {
                     "type": "object",
+                    "description": "Evaluate all available results in the interval according to the priorities.",
                     "properties": {
                         "max_latency": {
                             "type": "string",
+                            "description": "Period to collect available results before evaluation.",
                             "pattern": "\\d{1,3}d",
                             "default": "3d"
                         },
@@ -86,6 +92,7 @@
                 },
                 {
                     "type": "string",
+                    "description": "Process and deliver the first available search result in the interval.",
                     "enum": [
                         "first_available"
                     ]
@@ -97,6 +104,7 @@
         },
         "output": {
             "type": "object",
+            "title": "Output",
             "required": [
                 "id"
             ],
@@ -120,6 +128,7 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "title": "Tag",
                 "required": [
                     "label",
                     "value"
