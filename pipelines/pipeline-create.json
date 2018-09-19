@@ -3,7 +3,6 @@
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-create.json",
     "type": "object",
     "title": "Pipeline",
-    "description": "JSON schema for Pipeline on EarthCache™",
     "required": [
         "start_date",
         "interval",
@@ -53,7 +52,6 @@
             "pattern": "[1-9]\\d{0,2}d"
         },
         "result_delivery": {
-            "title": "ResultDelivery",
             "description": "Configuration that determines which search result to process and deliver.",
             "oneOf": [
                 {
@@ -104,7 +102,6 @@
         },
         "output": {
             "type": "object",
-            "title": "Output",
             "required": [
                 "id"
             ],

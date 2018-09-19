@@ -3,7 +3,6 @@
     "$id": "https://raw.githubusercontent.com/skywatch-engineering/public-schemas/master/pipelines/pipeline-get.json",
     "type": "object",
     "title": "Pipeline",
-    "description": "JSON schema for Pipeline on EarthCache™",
     "required": [
         "id",
         "start_date",
@@ -108,7 +107,6 @@
         },
         "output": {
             "type": "object",
-            "title": "Output",
             "required": [
                 "id",
                 "format"
