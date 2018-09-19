@@ -21,9 +21,11 @@
             "minItems": 1,
             "items": {
                 "type": "array",
+                "title": "Polygons",
                 "minItems": 4,
                 "items": {
                     "type": "array",
+                    "title": "Lat/Long",
                     "maxItems": 2,
                     "minItems": 2,
                     "items": {
