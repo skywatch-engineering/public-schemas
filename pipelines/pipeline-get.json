@@ -97,16 +97,7 @@
                         }
                     }
                 }
-            ],
-            "default": {
-                "max_latency": "3d",
-                "priorities": [
-                    "latest",
-                    "lowest_cloud_cover",
-                    "highest_resolution",
-                    "lowest_cost"
-                ]
-            }
+            ]
         },
         "aoi": {
             "$ref": "supported-geojson-geometry.json"
