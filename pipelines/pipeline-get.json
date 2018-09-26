@@ -71,6 +71,7 @@
                 {
                     "type": "object",
                     "description": "Evaluate all available results in the interval according to the priorities.",
+                    "additionalProperties": false,
                     "properties": {
                         "max_latency": {
                             "type": "string",
