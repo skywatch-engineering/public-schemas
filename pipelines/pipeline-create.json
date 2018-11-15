@@ -111,25 +111,53 @@
             "$ref": "supported-geojson-geometry.json"
         },
         "output": {
-            "type": "object",
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "minLength": 1
+            "oneOf": [
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "ndvi",
+                                "true_color",
+                                "rgb+nir",
+                                "thermal_infrared"
+                            ],
+                            "default": "true_color"
+                        },
+                        "format": {
+                            "type": "string",
+                            "enum": [
+                                "geotiff",
+                                "jp2"
+                            ],
+                            "default": "geotiff"
+                        }
+                    }
                 },
-                "format": {
-                    "type": "string",
-                    "enum": [
-                        "geotiff",
-                        "jp2"
+                {
+                    "type": "object",
+                    "required": [
+                        "id"
                     ],
-                    "default": "geotiff"
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "format": {
+                            "type": "string",
+                            "enum": [
+                                "geotiff",
+                                "jp2"
+                            ],
+                            "default": "geotiff"
+                        }
+                    }
                 }
-            }
+            ]
         },
         "tags": {
             "type": "array",
