@@ -188,36 +188,88 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "configuration"
+                    "index",
+                    "search_result_id",
+                    "capture_date",
+                    "resolution",
+                    "price_per_km2",
+                    "aoi_coverage_percentage",
+                    "processing_status"
                 ],
                 "additionalProperties": false,
                 "properties": {
-                    "details": {
-                        "type": "object",
-                        "properties": {
-                            "price_per_km2": {
+                    "index": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "search_result_id": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "minLength": 36,
+                                "maxLength": 36
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "capture_date": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "minLength": 10,
+                                "maxLength": 10
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "resolution": {
+                        "anyOf": [
+                            {
                                 "type": "number",
                                 "minimum": 0
                             },
-                            "resolution": {
-                                "type": "number",
-                                "exclusiveMinimum": 0
-                            },
-                            "capture_date": {
-                                "type": "string",
-                                "format": "date"
+                            {
+                                "type": "null"
                             }
-                        }
+                        ]
                     },
-                    "configuration": {
-                        "type": "object",
-                        "properties": {
-                            "property": {
-                                "type": "string",
-                                "minLength": 1
+                    "price_per_km2": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "minimum": 0
                             },
-                            "value": {}
-                        }
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "aoi_coverage_percentage": {
+                        "anyOf": [
+                            {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 100
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "processing_status": {
+                        "type": "string",
+                        "minLength": 1
                     }
                 }
             },
